@@ -12,3 +12,7 @@ panic = "abort" # disable stack unwinding on panic
 panic = "abort" # disable stack unwinding on panic
 
 [dependencies]
+bootloader_precompiled = "0.3.0"
+
+[package.metadata.bootimage]
+default-target = "x86_64-vague_os.json"
