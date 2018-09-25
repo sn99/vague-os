@@ -1,14 +1,24 @@
 #![no_std] // don't link the Rust standard library
 #![no_main] // disable all Rust-level entry points
 
+#[macro_use]
+mod vga_buffer;
+
 extern crate bootloader_precompiled;
+extern crate volatile;
+extern crate spin;
+
+#[macro_use]
+extern crate lazy_static;
 
 use core::panic::PanicInfo;
 
 // function called on Panic
 #[panic_handler]
 #[no_mangle]
-pub fn panic(_info: &PanicInfo) -> ! {
+pub fn panic(info: &PanicInfo) -> ! {
+    println!("{}", info);
+
     loop {}
 }
 
@@ -27,6 +37,9 @@ pub extern "C" fn _start() -> ! {
             *vga_buffer.offset(i as isize * 2 + 1) = 0xb;
         }
     }
+
+    println!("car");
+    panic!("This is a test");
 
     loop {}
 }
