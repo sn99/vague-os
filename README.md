@@ -1,9 +1,10 @@
 # vague-os
+[![Build Status](https://travis-ci.com/sn99/vague-os.svg?branch=master)](https://travis-ci.com/sn99/vague-os)
 
 A hobby OS written in Rust
 
 ## How to build
-1. Rust and cargo should be [installed](https://www.rust-lang.org/en-US/install.html)
+
 2. Install xbuild `cargo install cargo-xbuild`
 3. In the vague-os dictionary `rustup override add nightly` followed by `rustup component add rust-src`
 4. Build using `cargo xbuild --target x86_64-vague_os.json`

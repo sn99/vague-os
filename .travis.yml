@@ -1,0 +1,19 @@
+sudo: true
+
+language: rust
+
+rust:
+- nightly
+
+os:
+- linux
+
+install:
+- cargo install cargo-xbuild
+- cargo install bootimage --version "^0.5.0"
+
+before_script:
+- rustup component add rust-src
+
+script:
+- bootimage build
