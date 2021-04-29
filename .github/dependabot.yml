@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: cargo
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "00:00"
+    timezone: Asia/Kolkata
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: spin
+    versions:
+    - 0.7.1
+    - 0.8.0
+  - dependency-name: volatile
+    versions:
+    - 0.4.3
